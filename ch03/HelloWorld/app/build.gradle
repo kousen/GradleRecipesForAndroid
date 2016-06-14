@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.kousenit.helloworld"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'attitude', 'client'
+
+    productFlavors {
+        arrogant {
+            dimension 'attitude'
+            applicationId 'com.kousenit.helloworld.arrg'
+        }
+        friendly {
+            dimension 'attitude'
+            applicationId 'com.kousenit.helloworld.frnd'
+        }
+        obsequious {
+            dimension 'attitude'
+            applicationId 'com.kousenit.helloworld.obsq'
+        }
+        stark {
+            dimension 'client'
+        }
+        wayne {
+            dimension 'client'
+        }
+    }
+
+    adbOptions {
+        timeOutInMs = 60 * 1000
+    }
+}
+
+task printVariantNames {
+    doLast {
+        android.applicationVariants.all { variant ->
+            println variant.name
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}

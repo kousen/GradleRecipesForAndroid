@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Friendly</string>
+    <string name="title_activity_welcome">We are BFFs!</string>
+    <string name="greeting">Hi there, %1$s!</string>
+</resources>

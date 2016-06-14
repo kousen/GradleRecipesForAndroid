@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Obsequious</string>
+    <string name="title_activity_welcome">your humble servant</string>
+    <string name="greeting">O great %1$s, please accept this pathetic
+        greeting from my unworthy self. I grovel in your
+        general direction.</string>
+</resources>
