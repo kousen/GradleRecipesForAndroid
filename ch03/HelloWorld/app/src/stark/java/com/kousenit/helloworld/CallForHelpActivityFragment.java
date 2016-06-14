@@ -1,4 +1,4 @@
-package com.oreilly.helloworld;
+package com.kousenit.helloworld;
 
 import android.app.ListFragment;
 import android.os.Bundle;

@@ -8,8 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import com.oreilly.helloworld.CallForHelpActivity;
-
 public class MainActivity extends AppCompatActivity {
     private EditText editText;
 
