@@ -16,19 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = (EditText) findViewById(R.id.name_edit_text);
+        editText = (EditText) findViewById(R.id.edit_text);
     }
 
     public void sayHello(View view) {
         String name = editText.getText().toString();
         Intent intent = new Intent(this, WelcomeActivity.class);
-        intent.putExtra("user", name);
-        startActivity(intent);
-    }
-
-    public void callForHelp(View view) {
-        String name = editText.getText().toString();
-        Intent intent = new Intent(this, CallForHelpActivity.class);
         intent.putExtra("user", name);
         startActivity(intent);
     }

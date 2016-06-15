@@ -10,44 +10,23 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/name_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text_color"
-        android:background="@color/background_color"
-        android:textSize="32sp"
-        android:text="@string/hello_world" />
+        android:id="@+id/text_view"
+        android:text="@string/hello_world"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/name_edit_text"
+        android:id="@+id/edit_text"
         android:hint="@string/name_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:buttonBarStyle"
-        >
-
-        <Button
-            android:id="@+id/hello_button"
-            android:onClick="sayHello"
-            android:text="@string/hello_button_label"
-            style="?android:buttonBarButtonStyle"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/call_for_help_button"
-            android:onClick="callForHelp"
-            android:text="@string/call_for_help_label"
-            style="?android:buttonBarButtonStyle"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/hello_button"
+        android:text="@string/hello_button_label"
+        android:onClick="sayHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

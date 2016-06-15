@@ -11,12 +11,59 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        arrogant {
+            applicationId 'com.kousenit.helloworld.arrg'
+        }
+        friendly {
+            applicationId 'com.kousenit.helloworld.frnd'
+        }
+        obsequious {
+            applicationId 'com.kousenit.helloworld.obsq'
+        }
+    }
+
+    adbOptions {
+        timeOutInMs = 60 * 1000
+    }
+}
+
+gradle.taskGraph.whenReady { graph ->
+    if (project.hasProperty('noLint')) {
+        graph.allTasks.findAll { it.name ==~ /lint.*/ }*.enabled = false
+    }
+}
+
+task installDebugFlavors {
+    android.applicationVariants.all { v ->
+        if (v.name.endsWith('Debug')) {
+            String name = v.name.capitalize()
+            dependsOn "install$name"
+        }
+    }
+}
+
+task printVariantNames {
+    doLast {
+        android.applicationVariants.all { variant ->
+            println variant.name
+        }
+    }
+}
+
+task copyApks(type: Copy, dependsOn: assembleDebug) {
+    from("$buildDir/outputs/apk") {
+        exclude '**/*unsigned.apk', '**/*unaligned.apk'
+    }
+    into '../apks'
 }
 
 dependencies {
