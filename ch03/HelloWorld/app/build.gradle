@@ -41,10 +41,6 @@ android {
             dimension 'client'
         }
     }
-
-    adbOptions {
-        timeOutInMs = 60 * 1000
-    }
 }
 
 task printVariantNames {
