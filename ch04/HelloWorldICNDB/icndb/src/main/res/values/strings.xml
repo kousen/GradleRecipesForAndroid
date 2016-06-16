@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">icndb</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="get_joke">Get Joke</string>
+    <string name="first_name" translatable="false">Xavier</string>
+    <string name="last_name" translatable="false">Ducrohet</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+</resources>
