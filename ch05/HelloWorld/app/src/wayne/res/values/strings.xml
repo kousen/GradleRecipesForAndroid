@@ -1,0 +1,12 @@
+<resources>
+    <string name="hello_world">Wayne Enterprises</string>
+    <string name="disclaimer">
+        <i>For legal purposes</i>, we know nothing about masked vigilantes.
+        If this is an emergency, please contact Commissioner Gordon or
+        other helpful officers of the Gotham City police by dialing 911.
+        \n
+        \n
+        (Or, project a <b>BatSignal</b><sup><small>TM</small></sup> on a
+        cloud. Sometimes that works.)
+    </string>
+</resources>

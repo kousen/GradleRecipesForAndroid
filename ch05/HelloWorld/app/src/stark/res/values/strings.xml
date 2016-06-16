@@ -1,0 +1,9 @@
+<resources>
+    <string name="hello_world">Stark Industries</string>
+
+    <string-array name="choices">
+        <item>Hire Tony as a Consultant (You Can\'t Afford Him)</item>
+        <item>Contact the Avengers (They\'re Okay, I Guess)</item>
+        <item>Complaints (justin.hammer@hammertech.com)</item>
+    </string-array>
+</resources>
