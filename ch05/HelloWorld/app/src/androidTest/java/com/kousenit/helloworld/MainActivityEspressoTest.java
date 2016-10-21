@@ -1,9 +1,8 @@
 package com.kousenit.helloworld;
 
+import android.support.test.filters.MediumTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.MediumTest;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -19,12 +18,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 @RunWith(AndroidJUnit4.class)
 @MediumTest
-public class MainActivityEspressoTest
-        extends ActivityInstrumentationTestCase2<MainActivity> {
-
-    public MainActivityEspressoTest() {
-        super(MainActivity.class);
-    }
+public class MainActivityEspressoTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule =

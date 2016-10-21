@@ -1,46 +1,38 @@
 package com.kousenit.helloworld;
 
-import android.support.test.InstrumentationRegistry;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.MediumTest;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@MediumTest
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 @RunWith(AndroidJUnit4.class)
-public class MainActivityLayoutTest
-        extends ActivityInstrumentationTestCase2<MainActivity> {
+public class MainActivityLayoutTest {
 
     private MainActivity activity;
     private TextView textView;
     private EditText editText;
     private Button helloButton;
 
-    public MainActivityLayoutTest() {
-        super(MainActivity.class);
-    }
+    @Rule
+    public ActivityTestRule<MainActivity> mActivityRule =
+            new ActivityTestRule<>(MainActivity.class);
 
     @Before
     public void setUp() throws Exception {
-        super.setUp();
-        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
-        activity = getActivity();
+        activity = mActivityRule.getActivity();
 
         textView = (TextView) activity.findViewById(R.id.name_text_view);
         editText = (EditText) activity.findViewById(R.id.name_edit_text);
         helloButton = (Button) activity.findViewById(R.id.hello_button);
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        super.tearDown();
     }
 
     @Test
