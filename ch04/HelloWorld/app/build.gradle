@@ -43,6 +43,7 @@ gradle.taskGraph.whenReady { graph ->
 }
 
 task installDebugFlavors {
+    description 'install all the debug variants on all connected devices'
     android.applicationVariants.all { v ->
         if (v.name.endsWith('Debug')) {
             String name = v.name.capitalize()
@@ -52,6 +53,7 @@ task installDebugFlavors {
 }
 
 task printVariantNames {
+    description 'print the names of all the variants'
     doLast {
         android.applicationVariants.all { variant ->
             println variant.name
@@ -59,7 +61,9 @@ task printVariantNames {
     }
 }
 
-task copyApks(type: Copy, dependsOn: 'assembleDebug') {
+task copyApks(type: Copy) {
+    dependsOn 'assembleDebug'
+    description "copy apks to the 'apk' directory in the root project"
     from("$buildDir/outputs/apk") {
         exclude '**/*unsigned.apk', '**/*unaligned.apk'
     }
