@@ -3,9 +3,9 @@ package com.kousenit.icndb;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
-import java.io.IOException;
-
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
@@ -16,7 +16,7 @@ public class JokeFinder {
     private Retrofit retrofit;
     private AsyncTask<String, Void, String> task;
 
-    public interface ICNDB {
+    interface ICNDB {
         @GET("/jokes/random")
         Call<IcndbJoke> getJoke(@Query("firstName") String firstName,
                                 @Query("lastName") String lastName,
@@ -32,26 +32,23 @@ public class JokeFinder {
 
     public void getJoke(TextView textView, String first, String last) {
         this.jokeView = textView;
-        new JokeTask().execute(first, last);
-    }
 
-    private class JokeTask extends AsyncTask<String, Void, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            ICNDB icndb = retrofit.create(ICNDB.class);
-            Call<IcndbJoke> icndbJoke = icndb.getJoke(params[0], params[1], "[nerdy]");
-            String joke = "";
-            try {
-                joke = icndbJoke.execute().body().getJoke();
-            } catch (IOException e) {
-                e.printStackTrace();
+        ICNDB icndb = retrofit.create(ICNDB.class);
+        icndb.getJoke(first, last, "[nerdy]").enqueue(new Callback<IcndbJoke>() {
+            @Override
+            public void onResponse(Call<IcndbJoke> call, Response<IcndbJoke> response) {
+                if (!response.isSuccessful()) {
+                    System.out.println(call.request().url() + " failed: " + response.code());
+                    return;
+                }
+
+                jokeView.setText(response.body().getJoke());
             }
-            return joke;
-        }
 
-        @Override
-        protected void onPostExecute(String result) {
-            jokeView.setText(result);
-        }
+            @Override
+            public void onFailure(Call<IcndbJoke> call, Throwable t) {
+                System.out.println(call.request().url() + " failed: " + t);
+            }
+        });
     }
 }
