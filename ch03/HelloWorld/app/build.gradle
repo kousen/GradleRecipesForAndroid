@@ -54,5 +54,6 @@ task printVariantNames {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.android.support:appcompat-v7:25.0.1'
 }
