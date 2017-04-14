@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         applicationId "com.kousenit.helloworld"
@@ -56,10 +56,10 @@ task printVariantNames {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.code.gson:gson:2.8.0'
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.5.4'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    compile 'com.android.support:support-annotations:25.0.1'
+    compile 'com.android.support:support-annotations:25.3.1'
 }
