@@ -30,8 +30,8 @@ public class MainActivityRobotiumTest
     }
 
     public void tearDown() throws Exception {
-        super.tearDown();
         solo.finishOpenedActivities();
+        super.tearDown();
     }
 
 }
