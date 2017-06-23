@@ -20,13 +20,18 @@ android {
     }
 
     productFlavors {
+        flavorDimensions 'attitude'
+
         arrogant {
+            dimension 'attitude'
             applicationId 'com.kousenit.helloworld.arrg'
         }
         friendly {
+            dimension 'attitude'
             applicationId 'com.kousenit.helloworld.frnd'
         }
         obsequious {
+            dimension 'attitude'
             applicationId 'com.kousenit.helloworld.obsq'
         }
     }
@@ -71,7 +76,7 @@ task copyApks(type: Copy) {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.4.0'
+    testImplementation 'junit:junit:4.12'
 }
