@@ -9,8 +9,6 @@
 
 # Java class files
 *.class
-.idea/
-*.iml
 
 # Generated files
 bin/
@@ -38,7 +36,7 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
+.idea/
 
 # Keystore files
 *.jks

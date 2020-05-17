@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -25,8 +25,8 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
         String name = getIntent().getStringExtra("name");
-        greetingText = (TextView) findViewById(R.id.greeting_text);
-        jokeText = (TextView) findViewById(R.id.joke_text);
+        greetingText = findViewById(R.id.greeting_text);
+        jokeText = findViewById(R.id.joke_text);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         new JokeFinder().getJoke(jokeText,

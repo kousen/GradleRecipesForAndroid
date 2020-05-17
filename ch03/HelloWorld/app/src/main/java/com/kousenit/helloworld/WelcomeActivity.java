@@ -1,7 +1,7 @@
 package com.kousenit.helloworld;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -18,7 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
         String name = getIntent().getStringExtra("user");
-        TextView greetingText = (TextView) findViewById(R.id.greeting_text);
+        TextView greetingText = findViewById(R.id.greeting_text);
         String format = getString(R.string.greeting);
         greetingText.setText(String.format(format, name));
     }
