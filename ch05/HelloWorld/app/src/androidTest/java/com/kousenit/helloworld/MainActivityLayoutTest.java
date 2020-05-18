@@ -1,7 +1,7 @@
 package com.kousenit.helloworld;
 
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
