@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.kousenit.helloworld"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 2
         versionName "1.1"
     }
@@ -35,12 +35,13 @@ android {
         }
     }
 
-    adbOptions {
-        timeOutInMs = 60 * 1000
-    }
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
+    }
+    namespace 'com.kousenit.helloworld'
+    installation {
+        timeOutInMs 60 * 1000
     }
 }
 
@@ -82,6 +83,6 @@ task copyApks(type: Copy) {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.13'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    testImplementation 'junit:junit:4.13.2'
 }
