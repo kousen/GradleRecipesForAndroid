@@ -10,12 +10,12 @@ android {
         }
     }
 
-    compileSdkVersion 29
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.kousenit.myapplication"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 2
         versionName "1.1"
     }
@@ -27,6 +27,7 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    namespace 'com.kousenit.myapplication'
 }
 
 ext {
@@ -51,6 +52,6 @@ task wrapper(type: Wrapper) {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.13'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    testImplementation 'junit:junit:4.13.2'
 }
