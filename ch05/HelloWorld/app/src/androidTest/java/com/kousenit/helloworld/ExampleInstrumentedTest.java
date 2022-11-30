@@ -19,19 +19,16 @@ import static org.junit.Assert.assertEquals;
  * Application
  * https://stackoverflow.com/questions/52924431/androidx-test-instrumentationregistry-is-deprecated
  */
-/*public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
-    }
-}*/
 
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
-    public void useAppContext() throws Exception {
+    public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getContext();
-
-        assertEquals("com.kousenit.helloworld", appContext.getPackageName());
+        String fullPackageName = appContext.getPackageName();
+        String rootPackageName = fullPackageName.substring(0, fullPackageName.lastIndexOf('.'));
+        rootPackageName = rootPackageName.substring(0, rootPackageName.lastIndexOf('.'));
+        assertEquals("com.kousenit.helloworld", rootPackageName);
     }
 }

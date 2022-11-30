@@ -9,7 +9,10 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void getRootPackageName() {
+        String completeName = "a.b.c.d.e";
+        String rootName = completeName.substring(0, completeName.lastIndexOf('.'));
+        rootName = rootName.substring(0, rootName.lastIndexOf('.'));
+        assertEquals("a.b.c", rootName);
     }
 }

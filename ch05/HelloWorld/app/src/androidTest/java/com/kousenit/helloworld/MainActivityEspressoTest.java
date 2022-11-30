@@ -1,7 +1,7 @@
 package com.kousenit.helloworld;
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.filters.MediumTest;
-import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Rule;
@@ -21,8 +21,8 @@ import static org.hamcrest.CoreMatchers.containsString;
 public class MainActivityEspressoTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class);
+    public ActivityScenarioRule<MainActivity> activityRule =
+            new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
     public void testHelloWorld() {

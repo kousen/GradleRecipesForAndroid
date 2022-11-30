@@ -18,7 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
         String name = getIntent().getStringExtra("user");
-        TextView greetingText = (TextView) findViewById(R.id.greeting_text);
+        TextView greetingText = findViewById(R.id.greeting_text);
         String format = getString(R.string.greeting);
         greetingText.setText(String.format(format, name));
     }

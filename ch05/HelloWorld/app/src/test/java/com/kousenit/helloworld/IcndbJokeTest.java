@@ -8,7 +8,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class IcndbJokeTest {
-    private String jsonTxt = "{\"type\": \"success\", \"value\": {\"id\": 451, \"joke\": \"Xav Ducrohet writes code that optimizes itself.\", \"categories\": [\"nerdy\"]}}";
+    private final String jsonTxt =
+            "{\"type\": \"success\", \"value\": {\"id\": 451, \"joke\": \"Xav Ducrohet writes code that optimizes itself.\", \"categories\": [\"nerdy\"]}}";
 
     @Test
     public void testGetJoke() throws Exception {
