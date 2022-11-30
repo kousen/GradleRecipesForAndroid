@@ -35,16 +35,14 @@ public class CallForHelpActivityFragment extends ListFragment {
 
         SimpleAdapter adapter = new SimpleAdapter(getActivity(), list,
                 android.R.layout.simple_list_item_2, columns, resources);
-        adapter.setViewBinder(new SimpleAdapter.ViewBinder() {
-                                  public boolean setViewValue(View view, Object data, String textRepresentation) {
-                                      if (data instanceof Spanned && view instanceof TextView) {
-                                          ((TextView) view).setText((Spanned) data);
-                                      } else {
-                                          ((TextView) view).setText(String.valueOf(data));
-                                      }
-                                      return true;
-                                  }
-                              }
+        adapter.setViewBinder((view1, data, textRepresentation) -> {
+            if (data instanceof Spanned && view1 instanceof TextView) {
+                ((TextView) view1).setText((Spanned) data);
+            } else {
+                ((TextView) view1).setText(String.valueOf(data));
+            }
+            return true;
+        }
         );
 
         setListAdapter(adapter);
